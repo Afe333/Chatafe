@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chatafe - Hafatra Farany</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+    }
+
+    #chat {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      min-height: 60vh;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      overflow-y: auto;
+    }
+
+    .message {
+      margin: 10px 0;
+    }
+
+    .user {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .bot {
+      color: #007bff;
+    }
+
+    #inputArea {
+      display: flex;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin-left: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Chatafe - Hafatra Farany</h1>
+    <p>Chatbot ara-baiboly: Sabata, Jesosy, sy ny fiaviany indray</p>
+  </header>
+
+  <div id="chat"></div>
+
+  <div id="inputArea">
+    <input type="text" id="userInput" placeholder="Manontania momba ny Baiboly..." />
+    <button onclick="sendMessage()">Alefa</button>
+  </div>
+
+  <footer>
+    Contact: ephraimnavalona@gmail.com
+  </footer>
+
+  <script>
+    const chat = document.getElementById('chat');
+
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const text = input.value.trim();
+      if (text === "") return;
+
+      addMessage("User", text);
+      respond(text.toLowerCase());
+      input.value = "";
+    }
+
+    function addMessage(sender, text) {
+      const div = document.createElement("div");
+      div.className = "message";
+      div.innerHTML = `<span class="${sender === 'User' ? 'user' : 'bot'}">${sender}:</span> ${text}`;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function respond(input) {
+      let response = "Miala tsiny fa tsy azoko tsara ny fanontanianao.";
+
+      if (input.includes("sabata")) {
+        response = "Ny Sabata dia andron'ny fitsaharana sy fanompoam-pivavahana. Ao amin'ny Baiboly dia manomboka amin'ny zoma hariva ka hatramin'ny sabotsy hariva (Genesisy 2:2-3, Eksodosy 20:8-11). Tsy alahady no sabata fa sabotsy.";
+      } else if (input.includes("jesosy")) {
+        response = "Jesosy dia Zanak'Andriamanitra, tonga teto an-tany mba hamonjy antsika amin'ny fahotana. Nanolotra ny ainy izy (Jaona 3:16) ary ho avy indray haka ny olony masina.";
+      } else if (input.includes("fiaviany") || input.includes("avy indray")) {
+        response = "Jesosy dia nampanantena fa hiverina indray (Jaona 14:1-3). Ho tonga miaraka amin'ny anjely sy feon'anjomara (1 Tesaloniana 4:16-17)."
+      } else if (input.includes("alahady")) {
+        response = "Ao amin’ny Baiboly dia tsy misy manambara fa alahady no sabata. Ny Asabotsy ihany no voatokana (Eksodosy 20:10), izany no sabata araka ny Soratra Masina.";
+      } else if (input.includes("nanolotra ny ainy")) {
+        response = "Jesosy dia nanolotra ny ainy teo amin'ny hazo fijaliana noho ny fahotan'ny olombelona (Isaia 53:5, Romana 5:8).";
+      } else if (input.includes("mahasoa") || input.includes("ilaina") || input.includes("dikany") && input.includes("sabata")) {
+        response = "Ny fitandremana ny Sabata dia manamarika ny fanekentsika an'Andriamanitra ho Mpamorona sy Mpanafaka (Ezekiela 20:20). Ho zava-dehibe mandrakizay ny Sabata (Isaia 66:23).";
+      }
+
+      addMessage("Chatafe", response);
+    }
+  </script>
+</body>
+  </html>
