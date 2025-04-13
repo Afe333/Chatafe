@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="mg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatafe - Hafatra Farany</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
+    }:root {
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #ffffff;
+}
+
+header {
+  background-color: #00695c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.chatbox {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.chat {
+  background: #e0f2f1;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.toggle-mode {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: #004d40;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+footer {
+  background: #004d40;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.contact {
+  margin-top: 1rem;
+}
+
+  </style>
+</head>
+<body>
+  <button class="toggle-mode" onclick="toggleMode()">Mode</button>
+  <header>
+    <h1>Chatafe - Hafatra Farany</h1>
+    <p>Fampianarana sy valin-teny avy amin’ny Baiboly</p>
+  </header>  <div class="chatbox">
+    <div class="chat">
+      <strong>Fanontaniana:</strong> Inona ny Sabata?
+      <p><strong>Valiny:</strong> Ny Sabata dia andro fahafito amin’ny herinandro, Sabotsy, araka ny Eksodosy 20:8-11. "Tsarovy ny andro Sabata ka hamasinina izany..." Tsy Alahady no Sabata fa Sabotsy.</p>
+    </div><div class="chat">
+  <strong>Fanontaniana:</strong> Manan-danja ve ny fitandremana ny Sabata raha ho avy i Jesosy?
+  <p><strong>Valiny:</strong> Eny. Jesosy dia niteny hoe: "Raha tia Ahy ianareo, dia hitandrina ny didiko" (Jaona 14:15). Ny Sabata dia ampahany amin’ireo didy folo.</p>
+</div>
+
+<div class="chat">
+  <strong>Fanontaniana:</strong> Inona ny dikan'ny nanoloran'i Jesosy ny ainy?
+  <p><strong>Valiny:</strong> Jaona 3:16 - "Fa toy izao no nitiavan’Andriamanitra izao tontolo izao: nomeny ny Zanani-lahy tokana..."</p>
+</div>
+
+<div class="chat">
+  <strong>Fanontaniana:</strong> Hiverina ve Jesosy?
+  <p><strong>Valiny:</strong> Eny, araka ny Jaona 14:3 sy Apokalypsy 1:7. Hiverina haka ny olony Izy.</p>
+</div>
+
+  </div>  <footer>
+    <div class="contact">
+      <p><strong>Contact:</strong></p>
+      <p>Email: ephraimnavalona@gmail.com</p>
+      <p>WhatsApp: +261 33 847 1985</p>
+    </div>
+    <p>Logo: Adventist mitandrina ny andro fahafito</p>
+  </footer>  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script></body>
+</html>
